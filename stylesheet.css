@@ -1,6 +1,7 @@
 
-#wrapper {
+#column1, #column2, #column3, #column4, #column5, #column6, #column7, #column8, #column9 {
 	float: left;
-	margin: 0;
-	width: 40%;
+	border: 1px solid black;
+	width: 25%;
+	margin-right: 10px;
 }
