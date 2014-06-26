@@ -8,12 +8,31 @@
 
   <script type="text/javascript" src="jquery.js"></script>
   <script>
+
+  	//step1: set all tiles to black in css 
+  	//step2: on click reveal the newly colored tile ("can't change")
+  	//step3: keep it as is and click on another none selected tile
+  	//step4: if match keep them on
+  	function shuffle(o){ //v1.0
+	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	    return o;
+	};
+
+	var originalArray = ["red", "red", "blue", "blue", "black", "black", "yellow", "yellow"];
+	colorArray = shuffle(originalArray);
+	console.log(colorArray);
+
   	$(document).ready(function (){
-  		$('#columns').children().each(function(){
-  			var color = {'background-color' : '#'+(Math.random()*0xFFFFFF<<0).toString(16)}
-  			$(this).css(color);
-  			// $(this).css('background-color', color);
-  		});
+  	//Randomly changes tiles to colors
+  		// $('#columns').children().each(function(){
+  		// 	var color = {'background-color' : '#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+  		// 	$(this).css(color);
+  		// });
+
+ 		// $('#columns').children().each(function(){
+  	// 		alert($(this).attr('style'));
+  	// 	});
+
   	});
 
   </script>
@@ -48,8 +67,6 @@
 	    <div id="column8">
 	    </div>
 
-	    <div id="column9">
-	    </div>
 	</div>
   </div>
 
