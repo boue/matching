@@ -13,16 +13,21 @@
   	//step2: on click reveal the newly colored tile ("can't change")
   	//step3: keep it as is and click on another none selected tile
   	//step4: if match keep them on
-  	function shuffle(o){ //v1.0
+  	function shuffle(o){ 
 	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	    return o;
 	};
 
 	var originalArray = ["red", "red", "blue", "blue", "black", "black", "yellow", "yellow"];
-	colorArray = shuffle(originalArray);
-	console.log(colorArray);
+	colors = shuffle(originalArray);
+	// console.log(colorArray);
 
   	$(document).ready(function (){
+  		// console.log(colors);
+  		$('#columns').children().on("click", function() {
+  			var color = {'background-color' : colors[Math.floor(Math.random() * 9) + 1] }
+  			$(this).css(color);
+  		});
   	//Randomly changes tiles to colors
   		// $('#columns').children().each(function(){
   		// 	var color = {'background-color' : '#'+(Math.random()*0xFFFFFF<<0).toString(16)}
