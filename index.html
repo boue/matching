@@ -9,11 +9,12 @@
   <script type="text/javascript" src="jquery.js"></script>
   <script>
   	$(document).ready(function (){
-  		alert('yo');
-  		// $('#columns').childen().each(function(){
-  		// 	var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-  		// 	$(this).css('background-color', 'color')
-  		// });
+  		// alert('yo');
+  		$('#columns').children().each(function(){
+  			var color = {'color' : '#'+(Math.random()*0xFFFFFF<<0).toString(16)}
+  			$(this).css(color);
+  			// alert('$(this).html()');
+  		});
   	});
 
   </script>
@@ -45,19 +46,19 @@
 	    </div>
 
 	    <div id="column6">
-	     CONTENT5
+	     CONTENT6
 	    </div>
 
 	    <div id="column7">
-	     CONTENT5
+	     CONTENT7
 	    </div>
 
 	    <div id="column8">
-	     CONTENT5
+	     CONTENT8
 	    </div>
 
 	    <div id="column9">
-	     CONTENT5
+	     CONTENT9
 	    </div>
 	</div>
   </div>
