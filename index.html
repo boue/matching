@@ -8,11 +8,23 @@
 
   <script type="text/javascript" src="jquery.js"></script>
   <script>
+  	//state: a tile has a color but is hidden until clicked
+  	//behavior: it can unhide, if matched with another then stays unhidden
 
   	//step1: set all tiles to black in css 
   	//step2: on click reveal the newly colored tile ("can't change")
   	//step3: keep it as is and click on another none selected tile
-  	//step4: if match keep them on
+  	//step4: if match keep them on, cannot toggle, so toggle = false
+  	function Card() {
+  		this.position == "down"
+  		this.flip = function() {
+  			if(this.position == "down") {
+  				//show value of background-color 
+  				//set this.position to "up"
+  			}
+  		}
+  	}
+
   	function shuffle(o){ 
 	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	    return o;
@@ -28,6 +40,11 @@
   			var color = {'background-color' : colors[Math.floor(Math.random() * 9) + 1] }
   			$(this).css(color);
   		});
+  	//if array.length == % 2 that means we need to match 4 more 
+  	//if array.length != % 2 that means he can click one more time 
+  		//in this case if the two colors match 
+  		//retain tiles 
+  		//or else return them to white 
   	//Randomly changes tiles to colors
   		// $('#columns').children().each(function(){
   		// 	var color = {'background-color' : '#'+(Math.random()*0xFFFFFF<<0).toString(16)}
